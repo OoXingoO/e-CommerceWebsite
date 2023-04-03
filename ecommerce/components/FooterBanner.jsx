@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { urlFor } from '../library/client';
 
 
-const FooterBanner = ({ footerBanner: { discount, largeText1, largeText2, saleTime, smallText, midText, product, buttonText, image, desc } }) => {
+const FooterBanner = ({ footerBanner: { discount, largeText1, largeText2, saleTime, smallText, midText, product, buttonText, image, desc, slug } }) => {
     return (
         <div className='footer-banner-container'>
             <div className='banner-desc'>
@@ -17,8 +17,9 @@ const FooterBanner = ({ footerBanner: { discount, largeText1, largeText2, saleTi
                     <p>{smallText}</p>
                     <h3>{midText}</h3>
                     <p>{desc}</p>
-                    <Link href={`product/${product}`}>
+                    <Link href={`product/${slug.current}`}>
                         <button type='button'>{buttonText}</button>
+                        {console.log(slug)}
                     </Link>
                 </div>
                 <img src={urlFor(image)} className='footer-banner-image' />
